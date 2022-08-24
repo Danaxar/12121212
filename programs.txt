@@ -1,4 +1,1 @@
-Discord.exe
-Spotify.exe
-League of legends.exe
-VALORANT.exe
+sublime_text.exe

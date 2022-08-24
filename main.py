@@ -11,6 +11,7 @@ import system as sys
 import time as t
 from PyQt6.QtWidgets import QApplication, QWidget
 import sys
+import psutil
 
 print("Opening program...")
 myConfig = cfg.Config()
@@ -32,4 +33,8 @@ while True:
             print(programName, "is not running")
         t.sleep(2.0)
 
-
+        for process in psutil.process_iter():
+            if programName == process.name():
+                process.kill()
+                print(programName, " closed.")
+        t.sleep(2.0)
