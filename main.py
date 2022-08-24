@@ -27,12 +27,6 @@ window.show()  # IMPORTANT!!!!! Windows are hidden by default.
 app.exec()
 while True:
     for programName in myConfig.programsToClose:
-        if sys.detectProgram(programName):
-            print(programName, "is running.")
-        else:
-            print(programName, "is not running")
-        t.sleep(2.0)
-
         for process in psutil.process_iter():
             if programName == process.name():
                 process.kill()
