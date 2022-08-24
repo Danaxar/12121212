@@ -1,2 +1,2 @@
 ## Be productive with us ❤️
-Program what close league of legends when you open it to stay you safe.
+We can close the trash for you 🗑️
