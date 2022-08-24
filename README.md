@@ -2,7 +2,7 @@
 We close the trash for you. 🗑️
 
 ## Why?
-We know it's hard to say no.
+We know it's hard say no.
 
 ## Usage
 Just open 
