@@ -5,7 +5,7 @@ We close the trash for you. 🗑️
 We know it's hard to say no.
 
 ## Usage
-Just open, now read something, be productive or I don't know.
+Just open. Now read something, be productive or I don't know.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
