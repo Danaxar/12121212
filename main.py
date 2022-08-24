@@ -9,12 +9,21 @@ Initialiced: 24-08-2022
 import Config as cfg
 import system as sys
 import time as t
-#import os
+from PyQt6.QtWidgets import QApplication, QWidget
+import sys
 
 print("Opening program...")
 myConfig = cfg.Config()
 print("Programs to close: variable.programsToClose")
 print("App running.")
+app = QApplication(sys.argv)
+
+# Create a Qt widget, which will be our window.
+window = QWidget()
+window.show()  # IMPORTANT!!!!! Windows are hidden by default.
+
+# Start the event loop.
+app.exec()
 while True:
     for programName in myConfig.programsToClose:
         if sys.detectProgram(programName):
@@ -22,3 +31,5 @@ while True:
         else:
             print(programName, "is not running")
         t.sleep(2.0)
+
+
