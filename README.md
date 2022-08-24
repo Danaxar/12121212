@@ -1,5 +1,8 @@
 # Be productive with us ❤️
-We close the trash for you 🗑️
+We close the trash for you. 🗑️
+
+## Why?
+We know it's hard to say no.
 
 ## Usage
 Just open 
