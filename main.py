@@ -10,11 +10,7 @@ import Config as cfg
 from PyQt6 import QtCore, QtWidgets
 from killer import killerProcess
 import sys
-
-print("Opening program...")
-myConfig = cfg.Config()
-print("Programs to close:", myConfig.programsToClose)
-print("App running.")
+import threading
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -44,8 +40,13 @@ class Ui_Dialog(object):
     def buttonClickedCancel(self):
         exit()
 
+def hilo1():
+    killerProcess()
+
 if __name__ == "__main__":
-    import sys
+    print("App running.")
+    t1 = threading.Thread(name="Hilo1", target=hilo1)
+    t1.start()
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
@@ -53,3 +54,5 @@ if __name__ == "__main__":
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec())
+    
+print("Program finished.")
