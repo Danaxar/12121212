@@ -7,15 +7,13 @@ Initialiced: 24-08-2022
 '''
 
 import Config as cfg
-import system as sys
-import time as t
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtWidgets
 from killer import killerProcess
 import sys
 
 print("Opening program...")
 myConfig = cfg.Config()
-print("Programs to close: variable.programsToClose")
+print("Programs to close:", myConfig.programsToClose)
 print("App running.")
 
 class Ui_Dialog(object):
