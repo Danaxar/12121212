@@ -12,8 +12,17 @@ from killer import killerProcess
 import sys
 import threading
 
+# Functions
+def hilo1():
+    killerProcess()
+
+# Global variables
+t1 = threading.Thread(name="Hilo1", target=hilo1)
+
+# Classes
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
+        self.power = -1  # Off
         Dialog.setObjectName("Dialog")
         Dialog.setEnabled(True)
         Dialog.resize(419, 335)
@@ -29,24 +38,33 @@ class Ui_Dialog(object):
         self.pushButton_2.clicked.connect(self.buttonClickedCancel)
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "be-productive"))
         self.pushButton.setText(_translate("Dialog", "Start"))
         self.pushButton_2.setText(_translate("Dialog", "Cancel"))
+
     def buttonClickedStart(self):
-        error_dialog.showMessage('Started!')
-        killerProcess()
+        self.power = self.power * (-1)
+        if self.power == 1:
+            killerProcess(self.power)
+            error_dialog.showMessage('Started!')
+            print('Killer started!')
+            #hilo1()
+        else:
+            killerProcess(self.power)
+            error_dialog.showMessage('Stopped.')
+            #print('Killer stopped.')
+            
+            
+
     def buttonClickedCancel(self):
         exit()
 
-def hilo1():
-    killerProcess()
-
 if __name__ == "__main__":
     print("App running.")
-    t1 = threading.Thread(name="Hilo1", target=hilo1)
-    t1.start()
+    #t1.start()
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()

@@ -1,13 +1,12 @@
 import Config as cfg
 import time as t
-from PyQt6.QtWidgets import QApplication, QWidget
 import psutil
 
-def killerProcess():
+def killerProcess(activation):
     print("Starting the killer...")
     myConfig = cfg.Config()
     print("Programs to close:", myConfig.programsToClose)
-    while True:
+    while activation == 1:
         t.sleep(2.0)
         for programName in myConfig.programsToClose:
             for process in psutil.process_iter():
