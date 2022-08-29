@@ -8,9 +8,9 @@ def killerProcess():
     myConfig = cfg.Config()
     print("Programs to close: variable.programsToClose")
     while True:
+        t.sleep(2.0)
         for programName in myConfig.programsToClose:
             for process in psutil.process_iter():
                 if programName == process.name():
                     process.kill()
                     print(programName, " closed.")
-            t.sleep(2.0)
