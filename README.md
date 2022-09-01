@@ -1,4 +1,4 @@
-# Be productive with us 💙
+# Be productive with us 🚀
 We close the trash for you. 🗑️
 
 ## Why?
